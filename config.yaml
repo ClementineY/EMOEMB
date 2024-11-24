@@ -1,0 +1,21 @@
+model:
+  teacher_model_name: bert-large-uncased
+  student_model_name: bert-base-uncased
+  num_labels: 5
+  learning_rate: 2e-5
+  alpha: 0.5
+  beta: 0.1
+  temperature: 2.0
+
+data:
+  data_path: /path/to/IEMOCAP
+  tokenizer_name: bert-base-uncased
+  batch_size: 32
+  num_workers: 4
+
+trainer:
+  max_epochs: 10
+  accelerator: gpu
+  devices: 1
+  precision: 16
+  accumulate_grad_batches: 2
